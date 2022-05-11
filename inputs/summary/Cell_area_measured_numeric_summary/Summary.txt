@@ -1,0 +1,13 @@
+ANALYSIS FOR Cell_area_measured_numeric
+__________________________________
+ANALYSIS STARTED FOR Cell_area_measured_numeric COLUMN
+     count :: >> 22974.0
+     mean :: >> 0.16737903811556543
+     std :: >> 0.9217783061392486
+     min :: >> 0.0004
+     25% :: >> 0.09
+     50% :: >> 0.1
+     75% :: >> 0.12
+     max :: >> 100.0
+
+ANALYSIS ENDED FOR Cell_area_measured_numeric COLUMN

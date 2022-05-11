@@ -1,0 +1,9 @@
+ANALYSIS FOR HTL_deposition_procedure_2
+__________________________________
+ANALYSIS STARTED FOR HTL_deposition_procedure_2 COLUMN
+     count :: >> 22974
+     unique :: >> 4
+     top :: >> None
+     freq :: >> 22951
+
+ANALYSIS ENDED FOR HTL_deposition_procedure_2 COLUMN

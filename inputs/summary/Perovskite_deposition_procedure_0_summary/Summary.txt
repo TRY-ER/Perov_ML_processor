@@ -1,0 +1,9 @@
+ANALYSIS FOR Perovskite_deposition_procedure_0
+__________________________________
+ANALYSIS STARTED FOR Perovskite_deposition_procedure_0 COLUMN
+     count :: >> 22974
+     unique :: >> 37
+     top :: >> Spin-coating
+     freq :: >> 19016
+
+ANALYSIS ENDED FOR Perovskite_deposition_procedure_0 COLUMN

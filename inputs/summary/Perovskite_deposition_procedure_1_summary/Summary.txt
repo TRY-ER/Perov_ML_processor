@@ -1,0 +1,9 @@
+ANALYSIS FOR Perovskite_deposition_procedure_1
+__________________________________
+ANALYSIS STARTED FOR Perovskite_deposition_procedure_1 COLUMN
+     count :: >> 22974
+     unique :: >> 26
+     top :: >> None
+     freq :: >> 19640
+
+ANALYSIS ENDED FOR Perovskite_deposition_procedure_1 COLUMN

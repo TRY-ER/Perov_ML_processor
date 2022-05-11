@@ -1,0 +1,9 @@
+ANALYSIS FOR PCE_categorical
+__________________________________
+ANALYSIS STARTED FOR PCE_categorical COLUMN
+     count :: >> 22974
+     unique :: >> 6
+     top :: >> high
+     freq :: >> 8294
+
+ANALYSIS ENDED FOR PCE_categorical COLUMN

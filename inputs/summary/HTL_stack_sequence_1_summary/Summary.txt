@@ -1,0 +1,9 @@
+ANALYSIS FOR HTL_stack_sequence_1
+__________________________________
+ANALYSIS STARTED FOR HTL_stack_sequence_1 COLUMN
+     count :: >> 22974
+     unique :: >> 179
+     top :: >> None
+     freq :: >> 21644
+
+ANALYSIS ENDED FOR HTL_stack_sequence_1 COLUMN

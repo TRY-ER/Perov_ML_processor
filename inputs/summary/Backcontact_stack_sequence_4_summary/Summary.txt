@@ -1,0 +1,9 @@
+ANALYSIS FOR Backcontact_stack_sequence_4
+__________________________________
+ANALYSIS STARTED FOR Backcontact_stack_sequence_4 COLUMN
+     count :: >> 22974
+     unique :: >> 3
+     top :: >> None
+     freq :: >> 22952
+
+ANALYSIS ENDED FOR Backcontact_stack_sequence_4 COLUMN

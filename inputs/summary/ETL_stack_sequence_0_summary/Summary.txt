@@ -1,0 +1,9 @@
+ANALYSIS FOR ETL_stack_sequence_0
+__________________________________
+ANALYSIS STARTED FOR ETL_stack_sequence_0 COLUMN
+     count :: >> 22974
+     unique :: >> 373
+     top :: >> TiO2-c 
+     freq :: >> 7460
+
+ANALYSIS ENDED FOR ETL_stack_sequence_0 COLUMN

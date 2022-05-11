@@ -1,0 +1,9 @@
+ANALYSIS FOR ETL_stack_sequence_4
+__________________________________
+ANALYSIS STARTED FOR ETL_stack_sequence_4 COLUMN
+     count :: >> 22974
+     unique :: >> 7
+     top :: >> None
+     freq :: >> 22951
+
+ANALYSIS ENDED FOR ETL_stack_sequence_4 COLUMN

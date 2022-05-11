@@ -1,0 +1,9 @@
+ANALYSIS FOR Perovskite_deposition_quenching_induced_crystallisation_bool
+__________________________________
+ANALYSIS STARTED FOR Perovskite_deposition_quenching_induced_crystallisation_bool COLUMN
+     count :: >> 22974
+     unique :: >> 2
+     top :: >> True
+     freq :: >> 13919
+
+ANALYSIS ENDED FOR Perovskite_deposition_quenching_induced_crystallisation_bool COLUMN

@@ -1,0 +1,13 @@
+ANALYSIS FOR Perovskite_deposition_thermal_annealing_temperature_6
+__________________________________
+ANALYSIS STARTED FOR Perovskite_deposition_thermal_annealing_temperature_6 COLUMN
+     count :: >> 22974.0
+     mean :: >> 0.027422303473491772
+     std :: >> 1.5707841124525357
+     min :: >> 0.0
+     25% :: >> 0.0
+     50% :: >> 0.0
+     75% :: >> 0.0
+     max :: >> 90.0
+
+ANALYSIS ENDED FOR Perovskite_deposition_thermal_annealing_temperature_6 COLUMN

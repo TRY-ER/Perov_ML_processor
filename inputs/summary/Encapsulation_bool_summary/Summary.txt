@@ -1,0 +1,9 @@
+ANALYSIS FOR Encapsulation_bool
+__________________________________
+ANALYSIS STARTED FOR Encapsulation_bool COLUMN
+     count :: >> 22974
+     unique :: >> 2
+     top :: >> False
+     freq :: >> 22098
+
+ANALYSIS ENDED FOR Encapsulation_bool COLUMN

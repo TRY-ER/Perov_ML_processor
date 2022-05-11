@@ -1,0 +1,9 @@
+ANALYSIS FOR Perovskite_deposition_aggregation_state_of_reactants_0
+__________________________________
+ANALYSIS STARTED FOR Perovskite_deposition_aggregation_state_of_reactants_0 COLUMN
+     count :: >> 22974
+     unique :: >> 4
+     top :: >> Liquid
+     freq :: >> 19545
+
+ANALYSIS ENDED FOR Perovskite_deposition_aggregation_state_of_reactants_0 COLUMN

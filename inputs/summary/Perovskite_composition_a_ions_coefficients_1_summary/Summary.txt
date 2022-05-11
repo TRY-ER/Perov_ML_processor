@@ -1,0 +1,13 @@
+ANALYSIS FOR Perovskite_composition_a_ions_coefficients_1
+__________________________________
+ANALYSIS STARTED FOR Perovskite_composition_a_ions_coefficients_1 COLUMN
+     count :: >> 22974.0
+     mean :: >> 0.3168076260120136
+     std :: >> 2.450012185419199
+     min :: >> 0.0
+     25% :: >> 0.0
+     50% :: >> 0.0
+     75% :: >> 0.15
+     max :: >> 99.5
+
+ANALYSIS ENDED FOR Perovskite_composition_a_ions_coefficients_1 COLUMN

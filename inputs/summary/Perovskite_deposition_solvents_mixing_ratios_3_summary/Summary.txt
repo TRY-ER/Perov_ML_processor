@@ -1,0 +1,13 @@
+ANALYSIS FOR Perovskite_deposition_solvents_mixing_ratios_3
+__________________________________
+ANALYSIS STARTED FOR Perovskite_deposition_solvents_mixing_ratios_3 COLUMN
+     count :: >> 22974.0
+     mean :: >> 0.5190563245407852
+     std :: >> 21.07641914777458
+     min :: >> 0.0
+     25% :: >> 0.0
+     50% :: >> 0.0
+     75% :: >> 0.0
+     max :: >> 1000.0
+
+ANALYSIS ENDED FOR Perovskite_deposition_solvents_mixing_ratios_3 COLUMN

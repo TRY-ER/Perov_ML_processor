@@ -1,0 +1,13 @@
+ANALYSIS FOR JV_average_over_n_number_of_cells_numeric
+__________________________________
+ANALYSIS STARTED FOR JV_average_over_n_number_of_cells_numeric COLUMN
+     count :: >> 22974.0
+     mean :: >> 6.175067467572038
+     std :: >> 15.190351688725714
+     min :: >> 1.0
+     25% :: >> 1.0
+     50% :: >> 1.0
+     75% :: >> 2.0
+     max :: >> 767.0
+
+ANALYSIS ENDED FOR JV_average_over_n_number_of_cells_numeric COLUMN

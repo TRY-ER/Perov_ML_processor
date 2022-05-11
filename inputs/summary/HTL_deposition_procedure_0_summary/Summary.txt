@@ -1,0 +1,9 @@
+ANALYSIS FOR HTL_deposition_procedure_0
+__________________________________
+ANALYSIS STARTED FOR HTL_deposition_procedure_0 COLUMN
+     count :: >> 22974
+     unique :: >> 54
+     top :: >> Spin-coating
+     freq :: >> 20895
+
+ANALYSIS ENDED FOR HTL_deposition_procedure_0 COLUMN

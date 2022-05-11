@@ -1,0 +1,9 @@
+ANALYSIS FOR ETL_deposition_procedure_0
+__________________________________
+ANALYSIS STARTED FOR ETL_deposition_procedure_0 COLUMN
+     count :: >> 22974
+     unique :: >> 56
+     top :: >> Spin-coating 
+     freq :: >> 8914
+
+ANALYSIS ENDED FOR ETL_deposition_procedure_0 COLUMN

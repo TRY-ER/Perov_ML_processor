@@ -1,0 +1,9 @@
+ANALYSIS FOR Perovskite_deposition_solvents_mixing_ratios_0
+__________________________________
+ANALYSIS STARTED FOR Perovskite_deposition_solvents_mixing_ratios_0 COLUMN
+     count :: >> 22974
+     unique :: >> 100
+     top :: >> 1
+     freq :: >> 8098
+
+ANALYSIS ENDED FOR Perovskite_deposition_solvents_mixing_ratios_0 COLUMN

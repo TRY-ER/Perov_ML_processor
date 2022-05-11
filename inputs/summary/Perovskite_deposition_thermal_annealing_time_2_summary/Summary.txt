@@ -1,0 +1,13 @@
+ANALYSIS FOR Perovskite_deposition_thermal_annealing_time_2
+__________________________________
+ANALYSIS STARTED FOR Perovskite_deposition_thermal_annealing_time_2 COLUMN
+     count :: >> 22974.0
+     mean :: >> 0.40360842691738485
+     std :: >> 4.61074257167593
+     min :: >> 0.0
+     25% :: >> 0.0
+     50% :: >> 0.0
+     75% :: >> 0.0
+     max :: >> 180.0
+
+ANALYSIS ENDED FOR Perovskite_deposition_thermal_annealing_time_2 COLUMN

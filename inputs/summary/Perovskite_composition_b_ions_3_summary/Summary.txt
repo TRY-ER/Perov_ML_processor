@@ -1,0 +1,9 @@
+ANALYSIS FOR Perovskite_composition_b_ions_3
+__________________________________
+ANALYSIS STARTED FOR Perovskite_composition_b_ions_3 COLUMN
+     count :: >> 22974
+     unique :: >> 2
+     top :: >> None
+     freq :: >> 22973
+
+ANALYSIS ENDED FOR Perovskite_composition_b_ions_3 COLUMN

@@ -1,0 +1,9 @@
+ANALYSIS FOR Backcontact_deposition_procedure_3
+__________________________________
+ANALYSIS STARTED FOR Backcontact_deposition_procedure_3 COLUMN
+     count :: >> 22974
+     unique :: >> 4
+     top :: >> None
+     freq :: >> 22944
+
+ANALYSIS ENDED FOR Backcontact_deposition_procedure_3 COLUMN

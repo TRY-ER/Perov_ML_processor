@@ -1,0 +1,9 @@
+ANALYSIS FOR Perovskite_composition_leadfree_bool
+__________________________________
+ANALYSIS STARTED FOR Perovskite_composition_leadfree_bool COLUMN
+     count :: >> 22974
+     unique :: >> 2
+     top :: >> False
+     freq :: >> 22309
+
+ANALYSIS ENDED FOR Perovskite_composition_leadfree_bool COLUMN

@@ -1,0 +1,9 @@
+ANALYSIS FOR Backcontact_deposition_procedure_0
+__________________________________
+ANALYSIS STARTED FOR Backcontact_deposition_procedure_0 COLUMN
+     count :: >> 22974
+     unique :: >> 23
+     top :: >> Evaporation
+     freq :: >> 21583
+
+ANALYSIS ENDED FOR Backcontact_deposition_procedure_0 COLUMN

@@ -1,0 +1,9 @@
+ANALYSIS FOR HTL_additives_compounds_0
+__________________________________
+ANALYSIS STARTED FOR HTL_additives_compounds_0 COLUMN
+     count :: >> 22974
+     unique :: >> 174
+     top :: >> Li-TFSI
+     freq :: >> 9387
+
+ANALYSIS ENDED FOR HTL_additives_compounds_0 COLUMN

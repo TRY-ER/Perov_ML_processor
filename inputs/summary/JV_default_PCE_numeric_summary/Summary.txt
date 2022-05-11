@@ -1,0 +1,13 @@
+ANALYSIS FOR JV_default_PCE_numeric
+__________________________________
+ANALYSIS STARTED FOR JV_default_PCE_numeric COLUMN
+     count :: >> 22974.0
+     mean :: >> 12.754932579054584
+     std :: >> 5.126841208917179
+     min :: >> 0.0
+     25% :: >> 9.5025
+     50% :: >> 13.6
+     75% :: >> 16.8
+     max :: >> 35.2
+
+ANALYSIS ENDED FOR JV_default_PCE_numeric COLUMN

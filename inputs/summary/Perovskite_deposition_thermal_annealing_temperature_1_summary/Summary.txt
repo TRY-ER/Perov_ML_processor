@@ -1,0 +1,9 @@
+ANALYSIS FOR Perovskite_deposition_thermal_annealing_temperature_1
+__________________________________
+ANALYSIS STARTED FOR Perovskite_deposition_thermal_annealing_temperature_1 COLUMN
+     count :: >> 22974
+     unique :: >> 103
+     top :: >> 0
+     freq :: >> 9236
+
+ANALYSIS ENDED FOR Perovskite_deposition_thermal_annealing_temperature_1 COLUMN

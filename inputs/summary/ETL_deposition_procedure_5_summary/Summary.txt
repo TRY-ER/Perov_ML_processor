@@ -1,0 +1,9 @@
+ANALYSIS FOR ETL_deposition_procedure_5
+__________________________________
+ANALYSIS STARTED FOR ETL_deposition_procedure_5 COLUMN
+     count :: >> 22974
+     unique :: >> 3
+     top :: >> None
+     freq :: >> 22964
+
+ANALYSIS ENDED FOR ETL_deposition_procedure_5 COLUMN

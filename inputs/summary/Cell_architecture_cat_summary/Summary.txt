@@ -1,0 +1,9 @@
+ANALYSIS FOR Cell_architecture_cat
+__________________________________
+ANALYSIS STARTED FOR Cell_architecture_cat COLUMN
+     count :: >> 22974
+     unique :: >> 3
+     top :: >> nip
+     freq :: >> 15074
+
+ANALYSIS ENDED FOR Cell_architecture_cat COLUMN

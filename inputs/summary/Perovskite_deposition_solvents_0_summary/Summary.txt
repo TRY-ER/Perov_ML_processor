@@ -1,0 +1,9 @@
+ANALYSIS FOR Perovskite_deposition_solvents_0
+__________________________________
+ANALYSIS STARTED FOR Perovskite_deposition_solvents_0 COLUMN
+     count :: >> 22974
+     unique :: >> 31
+     top :: >> DMF
+     freq :: >> 16468
+
+ANALYSIS ENDED FOR Perovskite_deposition_solvents_0 COLUMN

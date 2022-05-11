@@ -1,0 +1,9 @@
+ANALYSIS FOR Perovskite_deposition_solvents_2
+__________________________________
+ANALYSIS STARTED FOR Perovskite_deposition_solvents_2 COLUMN
+     count :: >> 22974
+     unique :: >> 31
+     top :: >> None
+     freq :: >> 21832
+
+ANALYSIS ENDED FOR Perovskite_deposition_solvents_2 COLUMN

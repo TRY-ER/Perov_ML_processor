@@ -1,0 +1,9 @@
+ANALYSIS FOR Perovskite_deposition_synthesis_atmosphere_2
+__________________________________
+ANALYSIS STARTED FOR Perovskite_deposition_synthesis_atmosphere_2 COLUMN
+     count :: >> 22974
+     unique :: >> 18
+     top :: >> None
+     freq :: >> 22744
+
+ANALYSIS ENDED FOR Perovskite_deposition_synthesis_atmosphere_2 COLUMN

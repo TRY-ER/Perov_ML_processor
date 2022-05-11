@@ -1,0 +1,13 @@
+ANALYSIS FOR Backcontact_thickness_list_0
+__________________________________
+ANALYSIS STARTED FOR Backcontact_thickness_list_0 COLUMN
+     count :: >> 22974.0
+     mean :: >> 191.9303038217115
+     std :: >> 2306.6368889286805
+     min :: >> 0.5
+     25% :: >> 80.0
+     50% :: >> 90.0
+     75% :: >> 100.0
+     max :: >> 120000.0
+
+ANALYSIS ENDED FOR Backcontact_thickness_list_0 COLUMN

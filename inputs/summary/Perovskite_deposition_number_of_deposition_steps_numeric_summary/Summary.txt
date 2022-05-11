@@ -1,0 +1,13 @@
+ANALYSIS FOR Perovskite_deposition_number_of_deposition_steps_numeric
+__________________________________
+ANALYSIS STARTED FOR Perovskite_deposition_number_of_deposition_steps_numeric COLUMN
+     count :: >> 22974.0
+     mean :: >> 1.1512144162966833
+     std :: >> 0.40168328174526363
+     min :: >> 0.0
+     25% :: >> 1.0
+     50% :: >> 1.0
+     75% :: >> 1.0
+     max :: >> 12.0
+
+ANALYSIS ENDED FOR Perovskite_deposition_number_of_deposition_steps_numeric COLUMN

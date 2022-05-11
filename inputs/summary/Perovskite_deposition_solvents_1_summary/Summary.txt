@@ -1,0 +1,9 @@
+ANALYSIS FOR Perovskite_deposition_solvents_1
+__________________________________
+ANALYSIS STARTED FOR Perovskite_deposition_solvents_1 COLUMN
+     count :: >> 22974
+     unique :: >> 48
+     top :: >>  DMSO
+     freq :: >> 9700
+
+ANALYSIS ENDED FOR Perovskite_deposition_solvents_1 COLUMN

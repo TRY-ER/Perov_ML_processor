@@ -1,0 +1,9 @@
+ANALYSIS FOR Perovskite_deposition_aggregation_state_of_reactants_1
+__________________________________
+ANALYSIS STARTED FOR Perovskite_deposition_aggregation_state_of_reactants_1 COLUMN
+     count :: >> 22974
+     unique :: >> 7
+     top :: >> None
+     freq :: >> 19646
+
+ANALYSIS ENDED FOR Perovskite_deposition_aggregation_state_of_reactants_1 COLUMN

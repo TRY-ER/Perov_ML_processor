@@ -1,0 +1,9 @@
+ANALYSIS FOR HTL_additives_compounds_3
+__________________________________
+ANALYSIS STARTED FOR HTL_additives_compounds_3 COLUMN
+     count :: >> 22974
+     unique :: >> 8
+     top :: >> None
+     freq :: >> 22862
+
+ANALYSIS ENDED FOR HTL_additives_compounds_3 COLUMN
