@@ -17,6 +17,10 @@ main_df = pd.read_csv("../inputs/standard_ml_preprocessed.csv")
 
 
 def make_save_cv_model(i,model_name,model,best_params,output_path="../outputs/cross_validated_models"):
+
+    ''' This function saves cross validation model in the corresponding directory ( if the path does not exist it creates the path for it'''
+
+
     if os.path.exists(os.path.join(f"{output_path}/{i}_{model_name}")):
         joblib.dump(model, os.path.join(f"{output_path}/{i}_{model_name}/{i}_model.z"))
         with open(os.path.join(f"{output_path}/{i}_{model_name}/model_params.txt"),"w+") as file:
@@ -28,6 +32,9 @@ def make_save_cv_model(i,model_name,model,best_params,output_path="../outputs/cr
             file.write(best_params)
 
 def train(model_name,df,k_folds=10,tar_cols="", exclude_cols ="", saving_path="./", verbose=1):
+
+    ''' this function is used to train the model with parameters optimization using optuna and cross validation using stratified k_folds'''
+
     x = df.drop([tar_cols, exclude_cols], axis=1)
     y = df[tar_cols]
     # k_fold constructing the cross-validation framework
@@ -59,7 +66,7 @@ def train(model_name,df,k_folds=10,tar_cols="", exclude_cols ="", saving_path=".
             Y_pred = clf.predict(X_test)
             acc = accuracy_score(Y_pred, Y_test)
             return acc
-    
+
         study = opt.create_study(direction='maximize')
         study.optimize(objective, n_trials=50)
         best_params = study.best_params
