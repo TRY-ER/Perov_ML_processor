@@ -35,6 +35,7 @@ def train(model_name,df,k_folds=10,tar_cols="", exclude_cols ="", saving_path=".
 
     ''' this function is used to train the model with parameters optimization using optuna and cross validation using stratified k_folds'''
 
+    print("[++] Starging the training process ...")
     x = df.drop([tar_cols, exclude_cols], axis=1)
     y = df[tar_cols]
     # k_fold constructing the cross-validation framework
@@ -67,11 +68,23 @@ def train(model_name,df,k_folds=10,tar_cols="", exclude_cols ="", saving_path=".
             acc = accuracy_score(Y_pred, Y_test)
             return acc
 
+        print(f"Starting optimization for fold : [{i}/{k_folds}]")
         study = opt.create_study(direction='maximize')
         study.optimize(objective, n_trials=50)
         best_params = study.best_params
+        print(f" Best params for fold : [{i}/{k_folds}]")
+        print(best_params)
 
         clf_model = TabModelClassifier(best_params)
-        make_save_cv_model(i,model_name,clf_model,best_params)
+        try:
+            print("[++] Saved the model and parameters in corresponding directories")
+            make_save_cv_model(i,model_name,clf_model,best_params)
+        except:
+            print("[-] Failed to save the model")
+        print("[++] Ended the training process ...")
 
 
+
+
+if __name__ == '__main__':
+    ...
