@@ -32,10 +32,21 @@ def train(model_name,sc_df,tar_df,optim,k_folds=10,tar_cols="", exclude_cols =[]
 
     ''' this function is used to train the model with parameters optimization using optuna and cross validation using stratified k_folds'''
 
-    print("[++] Starging the training process ...")
+    print("[++] Starting the training process ...")
     droper = exclude_cols
     droper.append(tar_cols)
     x = sc_df.drop(droper, axis=1)
+    index_list = []
+    for col in range(len(x.columns)):
+        index = 0
+        for i in x.iloc[:,col]:
+            if np.isnan(i):
+                index_list.append(index)
+            if not np.isfinite(i):
+                index_list.append(index)
+            index += 1
+    print(list(set(index_list)))
+    print(len(list(set(index_list))))
     y = tar_df[tar_cols]
     # k_fold constructing the cross-validation framework
     skf = StratifiedKFold(n_splits=k_folds,shuffle=True, random_state=123 )
@@ -56,11 +67,12 @@ def train(model_name,sc_df,tar_df,optim,k_folds=10,tar_cols="", exclude_cols =[]
                                     verbose = verbose,
                                     device_name = "auto"
                                     )
-            X_train,X_test = x[train_index], x[test_index]
-            Y_train, Y_test = y[train_index], y[test_index]
+            X_train,X_test = x.iloc[train_index], x.iloc[test_index]
+            Y_train, Y_test = y.iloc[train_index], y.iloc[test_index]
+            print(list(set(index_list)))
+            print(len(list(set(index_list))))
             clf.fit(X_train, Y_train,
-                    eval_set = [(X_test, Y_test)],
-                    eval_metrics = ['auc'])
+                    eval_set = [(X_test, Y_test)])
             Y_pred = clf.predict(X_test)
             acc = accuracy_score(Y_pred, Y_test)
             return acc
@@ -83,16 +95,23 @@ def train(model_name,sc_df,tar_df,optim,k_folds=10,tar_cols="", exclude_cols =[]
 
 
 
+
 if __name__ == '__main__':
     use_df = pd.read_csv("../inputs/standard_ml_preprocessed_df.csv")
+    # for key,item in use_df.isna().sum():
+    #     print(f"{key} = {item}"
+    # print(tar_df.isna().sum())
     tar_df = pd.read_csv("../inputs/unscaled_preprocessed_df.csv")
     tar_col = "PCE_categorical"
+
     exclude_cols = ["JV_default_PCE_numeric","JV_average_over_n_number_of_cells_numeric"]
     model_name = "pytorch_tabnet"
     optimizer = "Adam"
+    folds = 6
     train(model_name=model_name,
         sc_df=use_df,
         tar_df=tar_df,
         tar_cols=tar_col,
         exclude_cols=exclude_cols,
-        optim=optimizer)
+        optim=optimizer,
+        k_folds=folds)
