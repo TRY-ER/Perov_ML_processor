@@ -53,21 +53,33 @@ use_df = use_df.drop(drop_vals, axis =1)
 X = use_df.copy()
 print(f" shape of X :  {X.shape}")
 
+
+# cat cols has to array of indicies
 cat_cols = []
 for key,value in col_data.items():
     if key == "categorical":
         for val in value:
             if val not in drop_vals:
                 cat_cols.append(val)
-print(cat_cols)
-print(len(cat_cols))
-smote = SMOTENC(categorical_features=cat_cols,
-                sampling_strategy="auto",
+cat_col_int = []
+index =0
+for value in X.columns:
+    for cat in cat_cols:
+        if cat == value: cat_col_int.append(index)
+    index += 1
+
+print(f" Length of categorcal indicies : {len(cat_col_int)}")
+smote = SMOTENC(categorical_features=cat_col_int,
+                sampling_strategy="minority",
                 random_state=123,
                 k_neighbors=3,
                 n_jobs=3)
-
+print(" Generating synthetic data for categorical target")
 x_smoted, y_smoted = smote.fit_resample(X,Y)
-print(main_df.shape)
-print(x_smoted.shape)
+print(f" shape of input dataset {main_df.shape}")
+print(f" shape of syn generated X dataset {x_smoted.shape}")
+print(f" shape of syn generated y dataset {y_smoted.shape}")
+
+result_df = x_smoted + y_smoted
+print(result_df.head())
 
