@@ -89,7 +89,7 @@ if __name__ == '__main__':
     tar_col = "PCE_categorical"
     model_name = "pytorch_tabnet"
     optimizer = "Adam"
-    folds = 20
+    folds = 7
     # clf = TabNetClassifier()
     # y = use_df[tar_col]
     # x = use_df.drop([tar_col],axis=1)
