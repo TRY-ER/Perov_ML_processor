@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-from sklearn.model_selection import StratifiedKFold
+from sklearn.model_selection import StratifiedKFold, train_test_split
 from pytorch_tabnet.tab_model import TabNetClassifier
 from sklearn.metrics import accuracy_score
 import optuna as opt
@@ -26,26 +26,12 @@ def make_save_cv_model(i,model_name,model,best_params,optim,output_path="../outp
         with open(os.path.join(f"{output_path}/{i}_{model_name}_{optim}/model_params.txt"),"w+") as file:
             file.write(best_params)
 
-def train(model_name,sc_df,tar_df,optim,k_folds=10,tar_cols="", exclude_cols =[], verbose=1):
+def train(model_name,sc_df,tar_col,optim,k_folds=10,tar_cols="",verbose=1):
 
     ''' this function is used to train the model with parameters optimization using optuna and cross validation using stratified k_folds'''
 
-    print("[++] Starting the training process ...")
-    droper = exclude_cols
-    droper.append(tar_cols)
-    x = sc_df.drop(droper, axis=1)
-    index_list = []
-    for col in range(len(x.columns)):
-        index = 0
-        for i in x.iloc[:,col]:
-            if np.isnan(i):
-                index_list.append(index)
-            if not np.isfinite(i):
-                index_list.append(index)
-            index += 1
-    print(list(set(index_list)))
-    print(len(list(set(index_list))))
-    y = tar_df[tar_cols]
+    y = sc_df[tar_col]
+    x = sc_df.drop([tar_col],axis=1)
     # k_fold constructing the cross-validation framework
     skf = StratifiedKFold(n_splits=k_folds,shuffle=True, random_state=123 )
     model_name = model_name 
@@ -60,17 +46,20 @@ def train(model_name,sc_df,tar_df,optim,k_folds=10,tar_cols="", exclude_cols =[]
                                     momentum = trial.suggest_float("momentum", 0.01, 0.4),
                                     optimizer_fn = torch.optim.Adam,
                                     optimizer_params = dict(lr=trial.suggest_float("lr",1e-4,1e-3)),
-                                    scheduler_fn = torch.optim.lr_scheduler,
-                                    scheduler_params = {"gamma" :trial.suggest_float("sch-gamma", 0.5, 0.95), "step_size": trial.suggest_int("sch_step_size", 10, 20, 2)},
+                                    # scheduler_fn = torch.optim.lr_scheduler,
+                                    # scheduler_params = {"gamma" :trial.suggest_float("sch-gamma", 0.5, 0.95), "step_size": trial.suggest_int("sch_step_size", 10, 20, 2)},
                                     verbose = verbose,
                                     device_name = "auto"
                                     )
-            X_train,X_test = x.iloc[train_index], x.iloc[test_index]
+            # print(f" train_index :: {train_index}")
+            # print(f" test_index :: {test_index}")
+            X_train,X_test = x.iloc[train_index,:], x.iloc[test_index,:]
+            # print(X_train.shape, X_test.shape)
+            X_train, X_test = X_train.to_numpy(dtype=np.float64), X_test.to_numpy(dtype=np.float64)
             Y_train, Y_test = y.iloc[train_index], y.iloc[test_index]
-            print(list(set(index_list)))
-            print(len(list(set(index_list))))
-            clf.fit(X_train, Y_train,
-                    eval_set = [(X_test, Y_test)])
+            Y_train, Y_test = Y_train.to_numpy(dtype=np.float64), Y_test.to_numpy(dtype=np.float64)
+            print(Y_train.shape, Y_test.shape)
+            clf.fit(X_train, Y_train)
             Y_pred = clf.predict(X_test)
             acc = accuracy_score(Y_pred, Y_test)
             return acc
@@ -84,32 +73,33 @@ def train(model_name,sc_df,tar_df,optim,k_folds=10,tar_cols="", exclude_cols =[]
 
         clf_model = TabNetClassifier(best_params)
         try:
-            print("[++] Saved the model and parameters in corresponding directories")
+            print("[++] Saving the model and parameters in corresponding directories")
             make_save_cv_model(i,model_name,clf_model,best_params,optim=optim)
         except:
             print("[-] Failed to save the model")
-        print("[++] Ended the training process ...")
 
 
 
 
 
 if __name__ == '__main__':
-    use_df = pd.read_csv("../inputs/standard_ml_preprocessed_df.csv")
-    # for key,item in use_df.isna().sum():
-    #     print(f"{key} = {item}"
-    # print(tar_df.isna().sum())
-    tar_df = pd.read_csv("../inputs/unscaled_preprocessed_df.csv")
+    use_df = pd.read_csv("../outputs/data/trainable_scaled.csv")
     tar_col = "PCE_categorical"
-
-    exclude_cols = ["JV_default_PCE_numeric","JV_average_over_n_number_of_cells_numeric"]
     model_name = "pytorch_tabnet"
     optimizer = "Adam"
-    folds = 6
+    folds = 20
+    # clf = TabNetClassifier()
+    # y = use_df[tar_col]
+    # x = use_df.drop([tar_col],axis=1)
+    # X_train, X_test, Y_train, Y_test = train_test_split(x,y,test_size=0.2)
+    # clf.fit(X_train,Y_train)
+    # y_pred = clf.predict(X_test)
+    # accuracy_score = accuracy_score(y_pred, Y_test)
+    # print(accuracy_score) 
+    # print("[++] Starting the training process ...")
     train(model_name=model_name,
         sc_df=use_df,
-        tar_df=tar_df,
-        tar_cols=tar_col,
-        exclude_cols=exclude_cols,
+        tar_col=tar_col,
         optim=optimizer,
         k_folds=folds)
+    print("[++] Ended the training process ...")
