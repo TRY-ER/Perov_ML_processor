@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import joblib
 from imblearn.over_sampling import SMOTENC
+import os 
 
 # Loading columns data as form of dictionary
 col_data  = joblib.load("../inputs/columns_encoded/syn_data.z")
@@ -14,7 +15,7 @@ y_int = "JV_default_PCE_numeric"
 
 drop_vals = ["JV_average_over_n_number_of_cells_numeric"]
 
-
+# destructured the target column  
 main_df[y_str] = main_df[y_str] * 10 
 main_df[y_str] = main_df[y_str].astype(np.int16)
 use_df = main_df.copy()
@@ -80,6 +81,17 @@ print(f" shape of input dataset {main_df.shape}")
 print(f" shape of syn generated X dataset {x_smoted.shape}")
 print(f" shape of syn generated y dataset {y_smoted.shape}")
 
-result_df = x_smoted + y_smoted
-print(result_df.head())
+x_smoted["target_cat"] = y_smoted
+# structuring the target column
+x_smoted["target_cat"] = x_smoted["target_cat"] / 10 
+x_smoted["target_cat"] = x_smoted["target_cat"].astype(np.float64)
 
+export_df = x_smoted.copy()
+# print(export_df.tail(10))
+
+try:
+    print(f" Exporting the data set at :: ../outputs/data/smoted_scaled_data.csv")
+    export_df.to_csv("../outputs/data/smoted_scaled_data.csv")
+    print(" Export Sucessful")
+except:
+    print(" Couldn't export the result dataframe")
