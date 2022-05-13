@@ -59,7 +59,9 @@ def train(model_name,sc_df,tar_col,optim,k_folds=10,tar_cols="",verbose=1):
             Y_train, Y_test = y.iloc[train_index], y.iloc[test_index]
             Y_train, Y_test = Y_train.to_numpy(dtype=np.float64), Y_test.to_numpy(dtype=np.float64)
             print(Y_train.shape, Y_test.shape)
-            clf.fit(X_train, Y_train)
+            clf.fit(X_train, Y_train,
+                    eval_set=[(X_test, Y_test)],
+                    eval_metric=['accuracy'])
             Y_pred = clf.predict(X_test)
             acc = accuracy_score(Y_pred, Y_test)
             return acc
