@@ -59,7 +59,8 @@ for key,value in col_data.items():
         for val in value:
             if val not in drop_vals:
                 cat_cols.append(val)
-
+print(cat_cols)
+print(len(cat_cols))
 smote = SMOTENC(categorical_features=cat_cols,
                 sampling_strategy="auto",
                 random_state=123,
