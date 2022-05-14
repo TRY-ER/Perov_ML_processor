@@ -65,7 +65,7 @@ def train(model_name,sc_df,tar_col,optim,k_folds=10,tar_cols="",verbose=1):
             Y_pred = clf.predict(X_test)
             print(classification_report(Y_test, Y_pred, labels=[x for x in range(6)]))
             clf_report = classification_report(Y_test, Y_pred, labels=[x for x in range(6)])
-            # joblib.dump(f"../outputs/classification_report/{i}_{model_name}_classification_report.z")
+            joblib.dump(f"../outputs/classification_report/comp/{i}_{model_name}_classification_report.z")
             with open(f"../outputs/classification_report/{model_name}_{i}_classification_report.txt","w+") as file:file.write(clf_report)
             print(f"Saved classification_report at : outputs/classification_report/{model_name}_{i}_classification_report.txt")
             acc = accuracy_score(Y_pred, Y_test)
@@ -77,6 +77,7 @@ def train(model_name,sc_df,tar_col,optim,k_folds=10,tar_cols="",verbose=1):
         best_params = study.best_params
         print(f" Best params for fold : [{i}/{k_folds}]")
         print(best_params)
+        joblib.dump(f"../outputs/{model_name}/best_params/comp/fold_{i}_best_params.z")
         with open(f"../outputs/{model_name}/best_params/fold_{i}_best_params.txt", "w+") as file:file.write(best_params)
         print(f"Saved best_params at :  at : outputs/{model_name}/best_params/fold_{i}_best_params.txt")
         clf_model = TabNetClassifier(best_params)
