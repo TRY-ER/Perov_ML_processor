@@ -27,6 +27,7 @@ main_df = main_df.drop(["PCE_categorical"],axis=1)
 scl = StandardScaler()
 scaled_df = scl.fit_transform(main_df)
 scaled_df = pd.DataFrame(scaled_df, columns = main_df.columns)
+joblib.dump(scl, "../outputs/scaler/standard_scaler.z")
 print(scaled_df.head())
 
 X = scaled_df
@@ -65,12 +66,12 @@ export_df.to_csv("../inputs/smote_custom_scaled_df.csv",index=False)
 main_reversed_df = decoded_df.copy()
 for col in decoded_df.columns:
     if col == "PCE_categorical":
-        lbl_enc = joblib.load("../inputs/Label_encoders/tar_col.z")
+        lbl_enc = joblib.load("../inputs/Label_encoders/non_smote/tar_col.z")
         main_reversed_df[col] = main_reversed_df[col].astype(np.int64)
         main_reversed_df[col] = lbl_enc.inverse_transform(main_reversed_df[col])
     else:
         try:
-            lbl_enc = joblib.load(f"../inputs/Label_encoders/{col}.z")
+            lbl_enc = joblib.load(f"../inputs/Label_encoders/non_smote/{col}.z")
             main_reversed_df[col] = main_reversed_df[col].astype(np.int64)
             main_reversed_df[col] = lbl_enc.inverse_transform(main_reversed_df[col])
         except:pass
